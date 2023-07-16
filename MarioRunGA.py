@@ -95,6 +95,9 @@ def restart(first_time=False):
             generation += 1
             fitness_array = []
             plt.clf()
+            plt.title("Mario Run")
+            plt.xlabel("Genetarion")
+            plt.ylabel("Score")
             plt.plot(best_fitness_array)
             plt.grid()
             plt.pause(0.001)
@@ -200,7 +203,7 @@ def game_loop():
         if walkcount%20 < 10: canvas.blit(guy[0], guy_pos)
         else: canvas.blit(guy[1], guy_pos)
         
-        showFont(f'得分：{score}, 最高分: {best_score}, Generation: {generation}, Chromosome: {chromosome}, jump_idx: {jump_idx}',50,50)
+        showFont(f'得分：{score}, 最高分: {best_score}, Generation: {generation}, Chromosome: {chromosome}, 跳躍次數: {jump_idx}',50,50)
         
         #碰撞判定
         if mario_pos[0] < guy_pos[0] < mario_pos[0] + mario_size[0]-10 and mario_pos[1] < guy_pos[1]+5 < mario_pos[1] + mario_size[1]:
